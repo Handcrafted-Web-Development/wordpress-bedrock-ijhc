@@ -1,0 +1,13 @@
+.error-page {
+	margin-bottom: rem(96);
+	text-align: center;
+
+	&__title {
+		margin-block: rem(64) rem(24);
+	}
+
+	&__desc {
+		text-align: center;
+		margin-bottom: rem(48);
+	}
+}

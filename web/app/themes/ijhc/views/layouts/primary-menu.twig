@@ -1,0 +1,40 @@
+<ul>
+	{% set itemnb = 0 %}
+	{% for item in menu.get_items %}
+		{% set itemnb = itemnb + 1 %}
+		{% set active = FALSE %}
+		{% if item.children is not empty %}
+			{% for childItem in  item.children %}
+				{% if 'current-menu-item' in childItem.classes %}
+					{% set active = TRUE %}
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+		<li>
+			{% if item.children is not empty %}
+				<button>Entrée menu</button>
+				<div>
+					<ul>
+						{% for childItem in  item.children %}
+							<li>
+								<a class="{{ 'current-menu-item' in childItem.classes ? 'active' }}"
+								   href="{{ childItem.link }}">{{ childItem.title }}</a>
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+			{% elseif item.link == '#' or item.link == '' or item.link == '/'%}
+				<label
+					class="{{ 'current-menu-item' in item.classes ? ' active' }}{{ active is not empty ? ' active' }}">
+					{{ item.title }}
+				</label>
+			{% else %}
+				{% set blank = "target='_blank' rel='noopener external' title='" ~ item.title ~ " - nouvelle fenêtre'" %}
+				<a class="{{ 'current-menu-item' in item.classes ? 'active' }}{{ active is not empty ? 'active' }}"
+				   href="{{ item.link }}" {{ item.target == '_blank' ? blank : '' }}>
+					{{ item.title }}
+				</a>
+			{% endif %}
+		</li>
+	{% endfor %}
+</ul>

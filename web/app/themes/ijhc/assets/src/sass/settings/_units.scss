@@ -1,0 +1,25 @@
+$columns: (
+	"xs": 2,
+	"sm": 4,
+	"md": 8,
+	"lg": 12,
+) !default;
+
+$breakpoints: (
+	"xs": 480px,
+	"sm": 600px,
+	"md": 900px,
+	"lg": 1440px,
+) !default;
+
+// Fluid size device-size
+$desktop-width: 1440;
+$mobile-width: 320;
+
+// Grid config
+$column-gap: 24;
+$container-max-width: 1280;
+
+// Font
+$base-font-size: 16;
+$base-line-height: 24;

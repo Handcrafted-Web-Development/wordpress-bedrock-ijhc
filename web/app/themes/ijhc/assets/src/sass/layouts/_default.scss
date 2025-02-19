@@ -1,0 +1,36 @@
+html {
+	font-family: $sans-serif;
+	font-size: $base-font-size + px;
+	line-height: rem($base-line-height);
+	color: var(--color--grey);
+	background-color: var(--color--white);
+	scroll-behavior: smooth;
+
+	p, ul {
+		font-size: rem(16);
+		line-height: 133%;
+	}
+}
+
+body {
+	height: auto;
+}
+
+@include from(md) {
+	.alignright {
+		float: right;
+		margin-bottom: rem(16);
+		margin-left: rem(16);
+	}
+
+	.alignleft {
+		float: left;
+		margin-bottom: rem(16);
+		margin-right: rem(16);
+	}
+}
+
+.aligncenter {
+	margin-inline: auto;
+	text-align: center;
+}

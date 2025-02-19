@@ -1,0 +1,34 @@
+@import "../../../assets/scss/variables/colors";
+
+.section-cover {
+  .section-cover__image {
+    img {
+      width: 100%;
+      height: 75vh;
+      object-fit: cover;
+      object-position: center;
+      aspect-ratio: 14 / 9;
+    }
+  }
+
+  .section-cover__container {
+    padding-top: 2.5rem;
+
+    .section-cover__title {
+      text-transform: uppercase;
+      text-align: center;
+      color: $primary-color;
+    }
+
+    .section-cover__subtitle {
+      text-align: center;
+      color: $primary-color;
+    }
+
+    .section-cover__description {
+      margin-top: 5rem;
+      text-align: center;
+      color: #000000;
+    }
+  }
+}

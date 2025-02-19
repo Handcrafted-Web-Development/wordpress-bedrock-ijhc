@@ -1,0 +1,22 @@
+{
+  "repositories": [
+    {
+      "type":"composer",
+      "url":"https://connect.advancedcustomfields.com"
+    }
+  ],
+  "require": {
+    "timber/timber": "^2.3",
+    "wpengine/advanced-custom-fields-pro": "^6.3"
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true
+    }
+  },
+  "extra": {
+    "installer-paths": {
+      "../../mu-plugins/{$name}/": ["wpengine/advanced-custom-fields-pro"]
+    }
+  }
+}

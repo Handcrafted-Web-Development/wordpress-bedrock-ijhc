@@ -1,0 +1,33 @@
+@import "units";
+@import "colors";
+@import "mixins";
+@import "functions";
+
+body.wp-admin {
+	p {
+		margin-top: 1em;
+		margin-bottom: 1em;
+	}
+}
+
+.editor-post-title {
+	text-align: center;
+}
+
+.wp-block,
+.wp-block[data-align="wide"],
+.wp-block[data-align="full"] {
+	max-width: initial !important;
+}
+
+.block-list-appender > .block-editor-inserter button {
+	margin: 20px auto;
+}
+
+.wp-block-post-content {
+	color: var(--color--blue);
+	background-color: var(--color--white);
+}
+.editor-post-title {
+	color: var(--color--blue);
+}

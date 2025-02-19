@@ -1,0 +1,6 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	{{ function('yoast_breadcrumb', '<p class="breadcrumb">','</p>') }}
+	{{ post.content }}
+{% endblock %}

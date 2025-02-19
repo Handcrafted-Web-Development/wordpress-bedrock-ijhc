@@ -1,0 +1,15 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	<div class="container">
+		{{ function('yoast_breadcrumb', '<p class="breadcrumb">','</p>') }}
+		<div class="basic-page error-page">
+			<h1 class="error-page__title heading--2 heading--centred">{{ error_404_title }}</h1>
+
+			<div class="error-page__desc">{{ error_404_content }}</div>
+			<a class="btn" href="/">Retour à la page d'accueil</a>
+		</div>
+	</div>
+
+{% endblock %}

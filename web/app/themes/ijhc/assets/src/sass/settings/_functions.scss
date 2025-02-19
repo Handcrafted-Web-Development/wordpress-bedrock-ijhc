@@ -1,0 +1,27 @@
+/**
+ * Conversion des valeurs en rem
+ * ****************************************
+ */
+@function rem($pixels, $context: $base-font-size) {
+    @return calc($pixels/$context) + rem;
+}
+
+// --------------------------------------------------------------------------
+// Fluid font from mobile to desktop mockup
+// Usage : font-size: fluid-size(14,18);
+// --------------------------------------------------------------------------
+@function fluid-size($mobile-size, $desktop-size) {
+	$x: calc(calc(($mobile-size * $desktop-width) - ($desktop-size * $mobile-width)) / ($desktop-width - $mobile-width));
+	$y: calc(($desktop-size - $mobile-size ) / ($desktop-width - $mobile-width)) * 100;
+
+	@return calc(#{$x}px + #{$y}vw);
+}
+
+// --------------------------------------------------------------------------
+// Grid start / end
+// Usage : grid-column: grid-start-end(4, 8);
+// --------------------------------------------------------------------------
+@function grid-start-end($start-place, $end-place) {
+    $end-place: $end-place + 1;
+    @return #{$start-place} / #{$end-place};
+}

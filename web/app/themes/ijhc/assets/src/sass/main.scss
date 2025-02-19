@@ -1,0 +1,22 @@
+// 1. Settings
+@import "settings/units";
+@import "settings/reset";
+@import "settings/colors";
+@import "settings/functions";
+@import "settings/mixins";
+@import "settings/fonts";
+@import "settings/curves";
+
+// 2. Layouts
+@import "layouts/default";
+@import "layouts/404";
+
+// 3.A Components - Atoms
+
+// 3.B Components - Molecules
+
+// 3.C Components - Organisms
+
+body {
+	background-color: blue;
+}

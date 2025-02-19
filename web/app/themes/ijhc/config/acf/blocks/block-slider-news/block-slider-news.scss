@@ -1,0 +1,106 @@
+@import "../../../assets/scss/variables/colors";
+
+.seize-block-slider-news {
+  overflow: hidden;
+  position: relative;
+  cursor: default;
+
+  .bloc-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $primary-color;
+
+    .product-section-subtitle {
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+      margin: 2.5rem 0 5rem 0;
+      @media screen and (min-width: 768px) {
+        width: 50%;
+        margin: 5rem 0 10rem 0;
+      }
+    }
+  }
+
+  .bloc-content {
+    position: relative;
+    background-color: $primary-color;
+
+    &:before {
+      position: absolute;
+      content: "";
+      top: 0;
+      right: 0;
+      width: 0;
+      height: 0;
+      border-top: 30rem solid white;
+      border-left: 120rem solid transparent;
+    }
+
+    .background-container {
+      width: 140rem;
+      height: 56.8rem;
+      border-top-right-radius: 1rem;
+    }
+
+    .content {
+      .slider {
+        .slick-dots {
+          width: fit-content;
+          margin: 0 auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          li {
+            display: flex;
+            height: 6px;
+            width: 18px;
+            transform: scaleX(0.33);
+            background: $white;
+            margin: 0 2px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.3s ease-in-out;
+
+            &.slick-active {
+              transition: background 0.2s,
+              transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+              transform: scaleX(1);
+              background: $white;
+              border-radius: 1rem;
+            }
+          }
+
+          button {
+            display: none;
+          }
+        }
+
+        article {
+          .article-description {
+            h3, p {
+              color: $white;
+            }
+          }
+        }
+      }
+
+      .btn-slider {
+        margin: 2rem;
+        background-color: $primary-color;
+        color: $white;
+        border: 0.1rem solid $white;
+
+        &:hover {
+          background-color: $white;
+          color: $primary-color;
+          border: 0.1rem solid $primary-color;
+        }
+      }
+    }
+  }
+}

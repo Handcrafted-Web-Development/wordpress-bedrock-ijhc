@@ -1,0 +1,43 @@
+# Ignore uploaded files and directories
+/web/app/languages
+/web/app/mu-plugins/*/
+/web/app/plugins/*
+!web/app/plugins/.gitkeep
+/web/app/uploads/*
+!web/app/uploads/.gitkeep
+/web/app/upgrade
+/web/app/upgrade-temp-backup/
+
+# Ignore themes files and directories
+/web/app/themes/twentytwentyfive
+!web/app/themes/.gitkeep
+web/app/themes/ijhc/vendor
+# Exclude auth.json from Git repo
+web/app/themes/ijhc/auth.json
+
+# WordPress
+/web/wp
+/web/.htaccess
+
+# Ignore local system files
+/.idea/
+.DS_Store
+Thumbs.db
+
+# Ignore the .env file
+.env
+.env.*
+!.env.example
+
+# Logs
+/web/_logs/
+
+# Composer
+/vendor/
+
+# WP-CLI
+wp-cli.local.yml
+
+# Ignore caching files
+/web/app/cache/*
+!web/app/cache/index.php

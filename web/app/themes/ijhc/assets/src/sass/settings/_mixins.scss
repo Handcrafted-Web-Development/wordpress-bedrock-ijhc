@@ -1,0 +1,182 @@
+// --------------------------------------------------------------------------
+// Gestion des breakpoints (Media queries)
+// --------------------------------------------------------------------------
+
+@mixin from($breakpoint) {
+	@if map-has-key($breakpoints, $breakpoint) {
+		@media (min-width: map-get($breakpoints, $breakpoint)) {
+			@content;
+		}
+	} @else {
+		@warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. Available breakpoints are: #{map-keys($breakpoints)}.";
+	}
+}
+
+@mixin until($breakpoint) {
+	@if map-has-key($breakpoints, $breakpoint) {
+		@media (max-width: map-get($breakpoints, $breakpoint) - 1) {
+			@content;
+		}
+	} @else {
+		@warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. Available breakpoints are: #{map-keys($breakpoints)}.";
+	}
+}
+
+@mixin between($breakpoint_min, $breakpoint_max) {
+	@if map-has-key($breakpoints, $breakpoint_min) and
+		map-has-key($breakpoints, $breakpoint_max)
+	{
+		@media (min-width: map-get($breakpoints, $breakpoint_min)) and (max-width: map-get($breakpoints, $breakpoint_max) - 1) {
+			@content;
+		}
+	} @else {
+		@warn "Unfortunately, no value could be retrieved.";
+	}
+}
+
+// --------------------------------------------------------------------------
+// Grid Layout
+// --------------------------------------------------------------------------
+
+@mixin display($display) {
+	@if $display == "grid" {
+		& {
+			$grid-margin: fluid-size(
+				calc(16 - $column-gap),
+				calc(80 - $column-gap)
+			);
+			display: grid;
+			grid-template-columns:
+				minmax($grid-margin, auto) repeat(
+					12,
+					minmax(
+						0,
+						calc(
+							(
+									#{$container-max-width}px -
+										(#{$column-gap}px * 11)
+								) /
+								12
+						)
+					)
+				)
+				minmax($grid-margin, auto);
+			grid-auto-columns: auto;
+			grid-auto-rows: min-content;
+			grid-auto-flow: dense;
+			column-gap: #{$column-gap}px;
+
+			> * {
+				grid-column: 2/-2;
+			}
+		}
+	}
+}
+
+/// Make a context based selector a little more friendly
+/// @author Hugo Giraudel
+/// Usage : @include when-inside('.container-name')
+@mixin when-inside($contexts) {
+	@each $state, $context in $contexts {
+		#{$state} & {
+			@content;
+		}
+	}
+}
+
+// -----------------------------------------------------------------------------
+// Flex layout
+// -----------------------------------------------------------------------------
+
+@mixin center {
+	display: inline-flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin x-center {
+	display: inline-flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+}
+
+@mixin y-center {
+	display: inline-flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+}
+
+@mixin row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+
+@mixin row-wrap {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+@mixin col {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+}
+
+@mixin col-wrap {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+// --------------------------------------------------------------------------
+// Fluid size
+// --------------------------------------------------------------------------
+
+@mixin fluid-size($property, $mobile-size, $desktop-size) {
+	@media screen and (max-width: #{$mobile-width}px) {
+		#{$property}: rem($mobile-size);
+	}
+
+	@media screen and (min-width: #{$mobile-width}px) and (max-width: #{$desktop-width}px) {
+		#{$property}: fluid-size($mobile-size, $desktop-size);
+	}
+
+	@media screen and (min-width: #{$desktop-width}px) {
+		#{$property}: rem($desktop-size);
+	}
+}
+
+@mixin button($style: null) {
+	@include center;
+	height: rem(72);
+	min-height: rem(72);
+	padding: 0 rem(32);
+	font-weight: 600;
+	color: var(--color--yellow);
+	background-color: var(--color--white);
+	border: none;
+	border-radius: rem(32);
+	cursor: pointer;
+	transition: filter 0.35s $ease;
+
+	&:hover {
+		filter: brightness(90%);
+	}
+
+	@include until(md) {
+		width: 100%;
+	}
+
+	// @if $style == "purple" {
+	// 	& {
+	// 		color: var(--color--white);
+	// 		background-color: var(--color--yellow);
+	// 	}
+	// }
+}

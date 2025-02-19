@@ -1,0 +1,77 @@
+{% extends "base.twig" %}
+{% block content %}
+	{{ function('yoast_breadcrumb', '<p class="breadcrumb">','</p>') }}
+	<section class="blog__header content__header container">
+		<h1 class="blog__header__heading">{{ title }}</h1>
+		<div class="blog__header__intro">{{ intro }}</div>
+	</section>
+	<section class="blog__filter filter container" id="liste">
+		<p class="blog__filter__heading">Filtrer par</p>
+		<div class="blog__filter__list">
+		<a href="{{ function('get_post_type_archive_link', 'post') }}#liste"class="btn btn--no-arrow btn--inverted-border">Toutes</a>
+			{% for category in categories %}
+				{% if category.term_id is same as current.term_id %}
+					<span class="btn btn--no-arrow btn--inverted-border active">{{ category.name }}</span>
+				{% else %}
+					<a class="btn btn--no-arrow btn--inverted-border" href="{{ function('get_category_link', category) }}#liste">{{ category.name }}</a>
+				{% endif %}
+			{% endfor %}
+		</div>
+	</section>
+	<section class="block block--related section-scroll background-primary-extralight">
+		<div class="block-content">
+			{% if posts.found_posts > 0 %}
+				<p class="related__list__count container">{{ posts.found_posts }} article{% if posts.found_posts > 1 %}s{% endif %} trouvé{% if posts.found_posts > 1 %}s{% endif %}</p>
+			{% endif %}
+			<div class="related__list container animated">
+			{% for post in posts %}
+				{% set categories = function('get_the_category', post) %}
+				{% set categories = [categories[0]] %}
+				<a href="{{ function('get_permalink', post) }}" class="related__item" data-type="{{ post.post_type }}">
+					<figure class="related__item__wrapper">
+						<picture class="related__item__visual">
+							{{ function('get_the_post_thumbnail', post, 'card', {'class': 'related__item__visual__file'}) }}
+						</picture>
+						<figcaption>
+							<h3 class="related__item__heading">{{ post.post_title }}</h3>
+							<span class="related__item__more btn btn--no-border btn--transparent">Lire la suite</span>
+							{% if categories is defined and categories is not null %}
+								{% for category in categories %}
+									<span class="related__item__category">{{ category.name }}</span>
+								{% endfor %}
+							{% endif %}
+						</figcaption>
+					</figure>
+				</a>
+			{% endfor %}
+			</div>
+			{% if posts.pagination.prev or posts.pagination.next %}
+				<div class="pagination container">
+					{% if posts.pagination.prev %}
+						<a href="{{posts.pagination.prev.link}}#liste" class="prev"><span class="screen-reader-text">Précedent</span></a>
+					{% else %}
+						<span class="prev"><span class="screen-reader-text">Précedent</span></span>
+					{% endif %}
+					<ul class="pages">
+						{% for page in posts.pagination.pages %}
+							<li>
+								{% if page.link %}
+									<a href="{{page.link}}#liste" class="{{page.class}}">{{page.title}}</a>
+								{% else %}
+									<span class="{{page.class}}">{{page.title}}</span>
+								{% endif %}
+							</li>
+						{% endfor %}
+					</ul>
+					{% if posts.pagination.next %}
+						<a href="{{posts.pagination.next.link}}#liste" class="next"><span class="screen-reader-text">Suivant</span></a>
+						{% else %}
+							<span class="next"><span class="screen-reader-text">Suivant</span></span>
+						{% endif %}
+				</div>
+			{% endif %}
+		</div>
+	</section>
+
+	{{ post.content }}
+{% endblock %}

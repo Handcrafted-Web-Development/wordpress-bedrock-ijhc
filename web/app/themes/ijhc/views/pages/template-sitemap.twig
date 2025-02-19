@@ -1,0 +1,28 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+<div class="container">
+	<div id="sitemap" class="container">
+		<div class="sitemap-list layout-part">
+
+			{% for key,pub in list_pub %}
+				<h2 class="tile-title">{{ key }}</h2>
+				<div class="tile-content">
+					<div class="text-content">
+						<ul class="layout-block">
+							{% for item in pub %}
+								<li>
+									<a href="{{ function('get_permalink', item.ID) }}">{{ item.post_title }}</a>
+								</li>
+							{% endfor %}
+						</ul>
+					</div>
+				</div>
+			{% endfor %}
+
+		</div>
+	</div>
+
+	{% endblock %}
+</div>

@@ -1,0 +1,12 @@
+{
+  "0": {
+    "name": "example",
+    "title": "Block Exemple",
+    "description": "Un exemple de bloc personnalisé.",
+    "icon": "admin-comments",
+    "keywords": [
+      "exemple",
+      "bloc"
+    ]
+  }
+}

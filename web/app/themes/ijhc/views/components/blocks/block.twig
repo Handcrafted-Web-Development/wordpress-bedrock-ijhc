@@ -1,0 +1,11 @@
+{% set block_name = block.name | replace({"crb/" : ""}) %}
+
+{% set background = 'default' %}
+
+{% if fields.background %}
+    {% set background = fields.background %}
+{% endif %}
+
+<section class="block block--{{ block_name }} {{ background }}">
+    {% block content %}{% endblock %}
+</section>
