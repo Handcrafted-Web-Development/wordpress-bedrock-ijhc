@@ -1,15 +1,15 @@
 // 1. Settings
-@import "settings/units";
-@import "settings/reset";
-@import "settings/colors";
-@import "settings/functions";
-@import "settings/mixins";
-@import "settings/fonts";
-@import "settings/curves";
+@import 'settings/units';
+@import 'settings/reset';
+@import 'settings/colors';
+@import 'settings/functions';
+@import 'settings/mixins';
+@import 'settings/fonts';
+@import 'settings/curves';
 
 // 2. Layouts
-@import "layouts/default";
-@import "layouts/404";
+@import 'layouts/default';
+@import 'layouts/404';
 
 // 3.A Components - Atoms
 

@@ -1,19 +1,27 @@
 {
-	"name": "ldwp-assets-builder",
-	"private": true,
-	"version": "1.0.0",
-	"type": "module",
-	"scripts": {
-		"dev": "vite",
-		"build": "tsc && vite build",
-		"preview": "vite preview"
-	},
-	"devDependencies": {
-		"sass": "^1.85.0",
-		"typescript": "^5.6.2",
-		"vite": "^5.4.14"
-	},
-	"dependencies": {
-		"swiper": "^11.1.4"
-	}
+  "name": "ijhc",
+  "version": "1.0.0",
+  "description": "Thème du site Wordpress du Hockey Club de l'Isle-Jourdain",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "eslint": "^9.20.1",
+    "prettier": "^3.5.1",
+    "sass": "^1.85.0",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Handcrafted-Web-Development/wordpress-bedrock-ijhc.git"
+  },
+  "author": "Baptiste Montécot",
+  "license": "MIT",
+  "dependencies": {
+    "@wordpress/eslint-plugin": "^17.9.0"
+  }
 }

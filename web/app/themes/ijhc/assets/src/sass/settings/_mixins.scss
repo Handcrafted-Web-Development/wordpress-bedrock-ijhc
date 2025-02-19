@@ -39,25 +39,16 @@
 // --------------------------------------------------------------------------
 
 @mixin display($display) {
-	@if $display == "grid" {
+	@if $display == 'grid' {
 		& {
-			$grid-margin: fluid-size(
-				calc(16 - $column-gap),
-				calc(80 - $column-gap)
-			);
+			$grid-margin: fluid-size(calc(16 - $column-gap), calc(80 - $column-gap));
 			display: grid;
 			grid-template-columns:
 				minmax($grid-margin, auto) repeat(
 					12,
 					minmax(
 						0,
-						calc(
-							(
-									#{$container-max-width}px -
-										(#{$column-gap}px * 11)
-								) /
-								12
-						)
+						calc((#{$container-max-width}px - (#{$column-gap}px * 11)) / 12)
 					)
 				)
 				minmax($grid-margin, auto);

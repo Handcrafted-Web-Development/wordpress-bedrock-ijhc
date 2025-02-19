@@ -6,7 +6,8 @@ html {
 	background-color: var(--color--white);
 	scroll-behavior: smooth;
 
-	p, ul {
+	p,
+	ul {
 		font-size: rem(16);
 		line-height: 133%;
 	}

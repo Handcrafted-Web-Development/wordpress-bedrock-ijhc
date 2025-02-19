@@ -75,8 +75,8 @@ fieldset {
 }
 
 .screen-reader-text {
-	clip: rect(1px,1px,1px,1px);
-	word-wrap: normal!important;
+	clip: rect(1px, 1px, 1px, 1px);
+	word-wrap: normal !important;
 	border: 0;
 	-webkit-clip-path: inset(50%);
 	clip-path: inset(50%);
@@ -85,11 +85,11 @@ fieldset {
 	overflow: hidden;
 	padding: 0;
 	position: absolute;
-	width: 1px
+	width: 1px;
 }
 
 .screen-reader-text:focus {
-	clip: auto!important;
+	clip: auto !important;
 	background-color: #ddd;
 	-webkit-clip-path: none;
 	clip-path: none;
@@ -103,5 +103,5 @@ fieldset {
 	text-decoration: none;
 	top: 5px;
 	width: auto;
-	z-index: 100000
+	z-index: 100000;
 }
