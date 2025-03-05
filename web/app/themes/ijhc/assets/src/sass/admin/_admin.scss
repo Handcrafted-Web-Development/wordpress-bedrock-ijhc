@@ -1,4 +1,4 @@
-@import "../settings/colors";
+@use "../settings/colors";
 
 html,
 body {
@@ -8,7 +8,7 @@ body {
 a {
   &:hover,
   &:focus {
-    color: $tertiary-admin-color;
+    color: colors.$tertiary-admin-color;
   }
 }
 
@@ -16,15 +16,15 @@ a {
 .wrap .add-new-h2:active,
 .wrap .page-title-action,
 .wrap .page-title-action:active {
-  background: $primary-color;
-  color: $white;
+  background: colors.$primary-color;
+  color: colors.$white;
   border: 0;
 }
 
 .wrap .add-new-h2:hover,
 .wrap .page-title-action:hover {
-  background: $tertiary-admin-color;
-  color: $white;
+  background: colors.$tertiary-admin-color;
+  color: colors.$white;
 }
 
 #wp-admin-bar-top-secondary {
@@ -37,7 +37,7 @@ a {
 }
 
 #wpadminbar {
-  background: $admin-color;
+  background: colors.$admin-color;
 
   .quicklinks {
     a {
@@ -52,14 +52,14 @@ a {
 
 #collapse-button:focus,
 #collapse-button:hover {
-  color: $tertiary-admin-color;
+  color: colors.$tertiary-admin-color;
 }
 
 #adminmenu,
 #adminmenu .wp-submenu,
 #adminmenuback,
 #adminmenuwrap {
-  background: $primary-color;
+  background: colors.$primary-color;
 }
 
 #adminmenu .wp-has-current-submenu .wp-submenu,
@@ -71,12 +71,12 @@ a {
 .folded #adminmenu .wp-has-current-submenu .wp-submenu,
 .folded #adminmenu a.wp-has-current-submenu:focus + .wp-submenu,
 .theme-browser .theme.active .theme-name {
-  background: $primary-color;
+  background: colors.$primary-color;
 }
 
 .theme-browser .theme.active .theme-actions,
 .theme-browser .theme .more-details {
-  background: $primary-color;
+  background: colors.$primary-color;
 }
 
 #adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head,
@@ -86,7 +86,7 @@ a {
 #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu,
 .folded #adminmenu li.current.menu-top,
 .folded #adminmenu li.wp-has-current-submenu {
-  background: $tertiary-admin-color;
+  background: colors.$tertiary-admin-color;
 }
 
 #adminmenu {
@@ -94,7 +94,7 @@ a {
 }
 
 #adminmenu li.wp-has-submenu.wp-not-current-submenu.opensub:hover:after {
-  border-right-color: rgba($white, 0.7);
+  border-right-color: rgba(colors.$white, 0.7);
 }
 
 #adminmenu .wp-submenu a:focus,
@@ -104,14 +104,14 @@ a {
 #adminmenu li.menu-top:hover,
 #adminmenu li.opensub > a.menu-top,
 #adminmenu li > a.menu-top:focus {
-  background: $primary-color;
-  color: $tertiary-admin-color;
+  background: colors.$primary-color;
+  color: colors.$tertiary-admin-color;
 }
 
 #adminmenu li a:focus div.wp-menu-image:before,
 #adminmenu li.opensub div.wp-menu-image:before,
 #adminmenu li:hover div.wp-menu-image:before {
-  color: $tertiary-admin-color;
+  color: colors.$tertiary-admin-color;
 }
 
 #wpadminbar .quicklinks .ab-sub-wrapper .menupop.hover > a,
@@ -134,20 +134,20 @@ a {
 #wpadminbar li:hover .ab-item:before,
 #wpadminbar.nojs .quicklinks .menupop:hover ul li a:focus,
 #wpadminbar.nojs .quicklinks .menupop:hover ul li a:hover {
-  color: $tertiary-admin-color;
+  color: colors.$tertiary-admin-color;
 }
 
 #wpadminbar .ab-top-menu > li.hover > .ab-item,
 #wpadminbar.nojq .quicklinks .ab-top-menu > li > .ab-item:focus,
 #wpadminbar:not(.mobile) .ab-top-menu > li:hover > .ab-item,
 #wpadminbar:not(.mobile) .ab-top-menu > li > .ab-item:focus {
-  background: $primary-color;
-  color: $tertiary-admin-color;
+  background: colors.$primary-color;
+  color: colors.$tertiary-admin-color;
 }
 
 #wpadminbar .menupop .ab-sub-wrapper,
 #wpadminbar .shortlink-input {
-  background: $primary-color;
+  background: colors.$primary-color;
 }
 
 #wp-content {
@@ -155,20 +155,20 @@ a {
 }
 
 #assistance_dashboard {
-  background: $primary-color;
-  color: $white;
+  background: colors.$primary-color;
+  color: colors.$white;
 
   .hndle {
     text-align: center;
-    background: $primary-color;
-    color: $white;
+    background: colors.$primary-color;
+    color: colors.$white;
   }
 
   .handlediv {
-    color: $white;
+    color: colors.$white;
 
     .toggle-indicator:before {
-      color: $white;
+      color: colors.$white;
     }
   }
 
@@ -180,8 +180,8 @@ a {
 
   a {
     text-decoration: none;
-    color: $tertiary-admin-color;
-    border-bottom: 1px $tertiary-admin-color dotted;
+    color: colors.$tertiary-admin-color;
+    border-bottom: 1px colors.$tertiary-admin-color dotted;
 
     &:hover,
     &:focus,

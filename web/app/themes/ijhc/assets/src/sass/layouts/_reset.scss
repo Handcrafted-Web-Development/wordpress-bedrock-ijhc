@@ -7,6 +7,7 @@
 
 @mixin font-smoothing($on: antialiased) {
   -webkit-font-smoothing: $on;
+  -moz-osx-font-smoothing: grayscale;
   font-smoothing: $on;
 }
 
@@ -15,28 +16,110 @@
   -webkit-text-size-adjust: $adjustment;
 }
 
-* {
+// Base styles
+*,
+*::before,
+*::after {
   @include box-sizing;
   @include font-smoothing;
 }
 
-*:after,
-*:before {
-  text-rendering: optimizeLegibility;
-}
-
 html {
   @include text-adjust;
+  height: 100%;
   margin: 0;
   padding: 0;
 }
 
 body {
   font-family: 'Raleway', sans-serif;
+  height: 100%;
   margin: 0;
   padding-top: 10rem;
   hyphens: none;
   position: relative;
   left: 0;
   transition: left 0.4s ease-in-out;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+figure {
+  margin: 0;
+}
+
+p,
+input,
+button,
+textarea,
+select,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  overflow-wrap: break-word;
+}
+
+ul,
+ol {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  word-wrap: normal !important;
+  border: 0;
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+
+  &:focus {
+    clip: auto !important;
+    background-color: #ddd;
+    -webkit-clip-path: none;
+    clip-path: none;
+    color: #444;
+    display: block;
+    font-size: 1em;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+  }
 }

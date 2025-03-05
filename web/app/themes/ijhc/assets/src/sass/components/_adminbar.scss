@@ -1,4 +1,4 @@
-@import "../settings/colors";
+@use "../settings/colors";
 
 #adminbar {
   position: fixed;
@@ -16,12 +16,12 @@
     text-indent: -999px;
     margin: 0 1px;
     border-radius: 5px 5px 0 0;
-    border-left: 1px solid $admin-color;
-    border-top: 1px solid $admin-color;
-    border-right: 1px solid $admin-color;
+    border-left: 1px solid colors.$admin-color;
+    border-top: 1px solid colors.$admin-color;
+    border-right: 1px solid colors.$admin-color;
     border-bottom: 0;
-    background: $admin-color;
-    color: $white;
+    background: colors.$admin-color;
+    color: colors.$white;
     transition: background .2s ease-in-out,
     transform .2s ease-in-out;
 
@@ -33,17 +33,17 @@
       height: calc(100% - 10px);
       margin: 5px;
       text-indent: 0;
-      fill: $white;
+      fill: colors.$white;
       transition: fill .2s ease-in-out;
     }
 
     &:hover, &:focus {
-      background: $secondary-admin-color;
+      background: colors.$secondary-admin-color;
       text-decoration: none;
       transform: scale(1.1);
 
       .icon {
-        fill: $tertiary-admin-color;
+        fill: colors.$tertiary-admin-color;
       }
     }
   }

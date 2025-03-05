@@ -1,5 +1,6 @@
 @use 'sass:math';
-@import "../settings/colors";
+@use "../settings/colors";
+@use "../settings/units";
 
 #site-main {
   min-height: 100vh;
@@ -37,28 +38,19 @@ h1, h2, h3, h4, h5 {
 
 // https://typescale.com/
 $scale-ratio: 1.414; // Perfect Fifth ratio
-$base-font-size: 62.5%; // Base font size
 $h5-font-size: (1rem * $scale-ratio);
 $h4-font-size: ($h5-font-size * $scale-ratio);
 $h3-font-size: ($h4-font-size * $scale-ratio);
 $h2-font-size: ($h3-font-size * $scale-ratio);
 $h1-font-size: ($h2-font-size * $scale-ratio);
 
-$breakpoints: (
-        "375px": 375,
-        "576px": 576,
-        "768px": 768,
-        "992px": 992,
-        "1200px": 1200
-);
-
 html {
-  font-size: $base-font-size;
+  font-size: units.$base-font-size;
 }
 
 h1 {
   font-weight: 700;
-  @each $breakpoint, $width in $breakpoints {
+  @each $breakpoint, $width in units.$breakpoints {
     $font-ratio: $h1-font-size * math.div($width, 1200);
 
     @media screen and (min-width: $breakpoint) {
@@ -68,7 +60,7 @@ h1 {
 }
 
 h2 {
-  @each $breakpoint, $width in $breakpoints {
+  @each $breakpoint, $width in units.$breakpoints {
     $font-ratio: $h2-font-size * math.div($width, 1200);
 
     @media screen and (min-width: $breakpoint) {
@@ -78,7 +70,7 @@ h2 {
 }
 
 h3 {
-  @each $breakpoint, $width in $breakpoints {
+  @each $breakpoint, $width in units.$breakpoints {
     $font-ratio: $h3-font-size * math.div($width, 1200);
 
     @media screen and (min-width: $breakpoint) {
@@ -88,7 +80,7 @@ h3 {
 }
 
 h4 {
-  @each $breakpoint, $width in $breakpoints {
+  @each $breakpoint, $width in units.$breakpoints {
     $font-ratio: $h4-font-size * math.div($width, 1200);
 
     @media screen and (min-width: $breakpoint) {
@@ -98,7 +90,7 @@ h4 {
 }
 
 h5 {
-  @each $breakpoint, $width in $breakpoints {
+  @each $breakpoint, $width in units.$breakpoints {
     $font-ratio: $h5-font-size * math.div($width, 1200);
 
     @media screen and (min-width: $breakpoint) {
@@ -195,20 +187,14 @@ button,
  * Sélection de contenu
  * --------------------------------------------------------------------------*/
 ::selection {
-  background: $primary-color;
-  color: $white;
-  text-shadow: none;
-}
-
-::-webkit-selection {
-  background: $primary-color;
-  color: $white;
+  background: colors.$primary-color;
+  color: colors.$white;
   text-shadow: none;
 }
 
 ::-moz-selection {
-  background: $primary-color;
-  color: $white;
+  background: colors.$primary-color;
+  color: colors.$white;
   text-shadow: none;
 }
 

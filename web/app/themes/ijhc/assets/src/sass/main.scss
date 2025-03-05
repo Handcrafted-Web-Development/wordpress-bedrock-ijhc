@@ -1,23 +1,22 @@
 // 1. Settings
-@import 'settings/units';
-@import 'settings/reset';
-@import 'settings/colors';
-@import 'settings/functions';
-@import 'settings/mixins';
-@import 'settings/fonts';
-@import 'settings/curves';
+@use 'settings/units';
+@use 'settings/colors';
+@use 'settings/functions';
+@use 'settings/mixins';
+@use 'settings/fonts';
+@use 'settings/curves';
 
 // 2. Layouts
-@import 'layouts/404';
-@import 'layouts/default';
-@import 'layouts/reset';
+@use 'layouts/404';
+@use 'layouts/default';
+@use 'layouts/reset';
 
 // 3. Admin
-@import 'admin/default';
+@use 'admin/admin';
 
 // 4.A Components - Atoms
-@import 'components/adminbar';
-@import 'components/icons';
+@use 'components/adminbar';
+@use 'components/icons';
 
 // 4.B Components - Molecules
 

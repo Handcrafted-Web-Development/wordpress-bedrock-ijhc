@@ -1,9 +1,11 @@
+@use "units";
+
 /**
  * Conversion des valeurs en rem
  * ****************************************
  */
-@function rem($pixels, $context: $base-font-size) {
-	@return calc($pixels/$context) + rem;
+@function rem($pixels, $context: units.$base-font-size) {
+  @return calc($pixels/$context) + rem;
 }
 
 // --------------------------------------------------------------------------
@@ -11,14 +13,12 @@
 // Usage : font-size: fluid-size(14,18);
 // --------------------------------------------------------------------------
 @function fluid-size($mobile-size, $desktop-size) {
-	$x: calc(
-		calc(($mobile-size * $desktop-width) - ($desktop-size * $mobile-width)) /
-			($desktop-width - $mobile-width)
-	);
-	$y: calc(($desktop-size - $mobile-size) / ($desktop-width - $mobile-width)) *
+  $x: calc(
+          calc(($mobile-size * #{units.$desktop-width}px) - ($desktop-size * #{units.$mobile-width}px)) /
+          (#{units.$desktop-width}px - #{units.$mobile-width}px)
+  );
+  $y: calc(($desktop-size - $mobile-size) / ( #{units.$desktop-width}px - #{units.$mobile-width}px)) *
 		100;
-
-	@return calc(#{$x}px + #{$y}vw);
 }
 
 // --------------------------------------------------------------------------
@@ -26,6 +26,6 @@
 // Usage : grid-column: grid-start-end(4, 8);
 // --------------------------------------------------------------------------
 @function grid-start-end($start-place, $end-place) {
-	$end-place: $end-place + 1;
-	@return #{$start-place} / #{$end-place};
+  $end-place: $end-place + 1;
+  @return #{$start-place} / #{$end-place};
 }
