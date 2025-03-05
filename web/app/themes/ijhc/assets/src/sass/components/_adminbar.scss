@@ -1,0 +1,50 @@
+@import "../settings/colors";
+
+#adminbar {
+  position: fixed;
+  left: 5%;
+  bottom: 0;
+  z-index: 500;
+  font-size: 0;
+
+  > * {
+    display: inline-block;
+    width: 30px;
+    height: 26px;
+    overflow: hidden;
+    font-size: 1rem;
+    text-indent: -999px;
+    margin: 0 1px;
+    border-radius: 5px 5px 0 0;
+    border-left: 1px solid $admin-color;
+    border-top: 1px solid $admin-color;
+    border-right: 1px solid $admin-color;
+    border-bottom: 0;
+    background: $admin-color;
+    color: $white;
+    transition: background .2s ease-in-out,
+    transform .2s ease-in-out;
+
+    .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: calc(100% - 10px);
+      height: calc(100% - 10px);
+      margin: 5px;
+      text-indent: 0;
+      fill: $white;
+      transition: fill .2s ease-in-out;
+    }
+
+    &:hover, &:focus {
+      background: $secondary-admin-color;
+      text-decoration: none;
+      transform: scale(1.1);
+
+      .icon {
+        fill: $tertiary-admin-color;
+      }
+    }
+  }
+}

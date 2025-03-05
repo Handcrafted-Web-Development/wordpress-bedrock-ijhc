@@ -1,0 +1,42 @@
+// Mixins
+@mixin box-sizing($type: border-box) {
+  -webkit-box-sizing: $type;
+  -moz-box-sizing: $type;
+  box-sizing: $type;
+}
+
+@mixin font-smoothing($on: antialiased) {
+  -webkit-font-smoothing: $on;
+  font-smoothing: $on;
+}
+
+@mixin text-adjust($adjustment: 100%) {
+  -ms-text-size-adjust: $adjustment;
+  -webkit-text-size-adjust: $adjustment;
+}
+
+* {
+  @include box-sizing;
+  @include font-smoothing;
+}
+
+*:after,
+*:before {
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  @include text-adjust;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+  padding-top: 10rem;
+  hyphens: none;
+  position: relative;
+  left: 0;
+  transition: left 0.4s ease-in-out;
+}

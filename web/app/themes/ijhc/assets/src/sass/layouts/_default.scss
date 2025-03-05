@@ -1,37 +1,217 @@
+@use 'sass:math';
+@import "../settings/colors";
+
+#site-main {
+  min-height: 100vh;
+  max-width: 1920px;
+  margin: auto;
+
+  iframe {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.entry-content {
+  min-height: calc(100vh - 86px);
+  @media (min-width: 820px) {
+    min-height: calc(100vh - 110px);
+  }
+
+  //> * {
+  //  &:not(:first-child) {
+  //    border: 1px solid #FF0000;
+  //  }
+  //}
+
+  > * {
+    margin-bottom: 3.2rem;
+  }
+}
+
+/* Titres */
+h1, h2, h3, h4, h5 {
+  margin: 0;
+  line-height: 1.5;
+}
+
+// https://typescale.com/
+$scale-ratio: 1.414; // Perfect Fifth ratio
+$base-font-size: 62.5%; // Base font size
+$h5-font-size: (1rem * $scale-ratio);
+$h4-font-size: ($h5-font-size * $scale-ratio);
+$h3-font-size: ($h4-font-size * $scale-ratio);
+$h2-font-size: ($h3-font-size * $scale-ratio);
+$h1-font-size: ($h2-font-size * $scale-ratio);
+
+$breakpoints: (
+        "375px": 375,
+        "576px": 576,
+        "768px": 768,
+        "992px": 992,
+        "1200px": 1200
+);
+
 html {
-	font-family: $sans-serif;
-	font-size: $base-font-size + px;
-	line-height: rem($base-line-height);
-	color: var(--color--grey);
-	background-color: var(--color--white);
-	scroll-behavior: smooth;
-
-	p,
-	ul {
-		font-size: rem(16);
-		line-height: 133%;
-	}
+  font-size: $base-font-size;
 }
 
-body {
-	height: auto;
+h1 {
+  font-weight: 700;
+  @each $breakpoint, $width in $breakpoints {
+    $font-ratio: $h1-font-size * math.div($width, 1200);
+
+    @media screen and (min-width: $breakpoint) {
+      font-size: if($width <= 576px, 3rem, $font-ratio);
+    }
+  }
 }
 
-@include from(md) {
-	.alignright {
-		float: right;
-		margin-bottom: rem(16);
-		margin-left: rem(16);
-	}
+h2 {
+  @each $breakpoint, $width in $breakpoints {
+    $font-ratio: $h2-font-size * math.div($width, 1200);
 
-	.alignleft {
-		float: left;
-		margin-bottom: rem(16);
-		margin-right: rem(16);
-	}
+    @media screen and (min-width: $breakpoint) {
+      font-size: if($width <= 576px, 2.5rem, $font-ratio);
+    }
+  }
 }
 
-.aligncenter {
-	margin-inline: auto;
-	text-align: center;
+h3 {
+  @each $breakpoint, $width in $breakpoints {
+    $font-ratio: $h3-font-size * math.div($width, 1200);
+
+    @media screen and (min-width: $breakpoint) {
+      font-size: if($width <= 576px, 2rem, $font-ratio);
+    }
+  }
+}
+
+h4 {
+  @each $breakpoint, $width in $breakpoints {
+    $font-ratio: $h4-font-size * math.div($width, 1200);
+
+    @media screen and (min-width: $breakpoint) {
+      font-size: if($width <= 576px, 1.8rem, $font-ratio);
+    }
+  }
+}
+
+h5 {
+  @each $breakpoint, $width in $breakpoints {
+    $font-ratio: $h5-font-size * math.div($width, 1200);
+
+    @media screen and (min-width: $breakpoint) {
+      font-size: if($width <= 576px, 1.6rem, $font-ratio);
+    }
+  }
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  font-size: 1.4rem;
+  @media screen and (min-width: 1200px) {
+    font-size: 1.6rem;
+  }
+}
+
+/*
+ * Balises de contenus
+ * --------------------------------------------------------------------------*/
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/*
+ * Balises de mise en forme
+ * --------------------------------------------------------------------------*/
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
+em,
+i,
+dfn {
+  font-style: italic;
+}
+
+img {
+  display: block;
+  border: none;
+}
+
+span {
+  font-size: 1.4rem;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    outline: 0;
+    text-decoration: none;
+  }
+}
+
+a,
+button,
+.btn {
+  position: relative;
+  border: none;
+  background: none;
+}
+
+.centered {
+  display: block;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+/*
+ * Sélection de contenu
+ * --------------------------------------------------------------------------*/
+::selection {
+  background: $primary-color;
+  color: $white;
+  text-shadow: none;
+}
+
+::-webkit-selection {
+  background: $primary-color;
+  color: $white;
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background: $primary-color;
+  color: $white;
+  text-shadow: none;
+}
+
+.hidden {
+  display: none !important;
 }

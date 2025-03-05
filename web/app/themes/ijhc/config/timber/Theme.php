@@ -25,11 +25,6 @@ class Theme extends Site
     {
 
         $context['menu'] = Timber::get_menu('menu');
-
-        if (function_exists('yoast_breadcrumb')) {
-            $context['breadcrumbs'] = yoast_breadcrumb('<nav class="breadcrumbs">', '</nav>', FALSE);
-        }
-
         $context['post'] = Timber::get_post();
         $context['site'] = $this;
         $context['is_front_page'] = is_front_page();

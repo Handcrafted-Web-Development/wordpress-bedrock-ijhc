@@ -8,15 +8,17 @@
 @import 'settings/curves';
 
 // 2. Layouts
-@import 'layouts/default';
 @import 'layouts/404';
+@import 'layouts/default';
+@import 'layouts/reset';
 
-// 3.A Components - Atoms
+// 3. Admin
+@import 'admin/default';
 
-// 3.B Components - Molecules
+// 4.A Components - Atoms
+@import 'components/adminbar';
+@import 'components/icons';
 
-// 3.C Components - Organisms
+// 4.B Components - Molecules
 
-body {
-	background-color: blue;
-}
+// 4.C Components - Organisms

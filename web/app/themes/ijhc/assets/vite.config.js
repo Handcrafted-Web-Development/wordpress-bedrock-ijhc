@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
+import VitePluginSvgSpritemap from '@spiriit/vite-plugin-svg-spritemap';
 
 export default defineConfig({
 	server: {
@@ -16,4 +17,11 @@ export default defineConfig({
 			input: ['./src/main.ts'],
 		},
 	},
+	plugins: [
+		VitePluginSvgSpritemap('./src/icons/*.svg'),
+		{
+			injectSVGOnDev: true,
+			styles: 'src/sass/sprites.css',
+		},
+	],
 });

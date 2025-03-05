@@ -1,5 +1,6 @@
 <?php
 
+use ijhc\functions\admin\AdminBar;
 use ijhc\functions\admin\Comments;
 use ijhc\functions\admin\Dashboard;
 
@@ -10,6 +11,7 @@ defined('ABSPATH') or exit;
  * **************************************************
  */
 $admin_files = [
+    'functions/admin/AdminBar.php',
     'functions/admin/Comments.php',
     'functions/admin/Dashboard.php',
 ];
@@ -27,5 +29,6 @@ foreach ($admin_files as $file) {
  * Déclarations
  * **************************************************
  */
+new AdminBar();
 new Comments();
 new Dashboard();

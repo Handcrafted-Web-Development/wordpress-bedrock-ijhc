@@ -1,0 +1,241 @@
+@import "../settings/colors";
+
+html,
+body {
+  background: red;
+}
+
+a {
+  &:hover,
+  &:focus {
+    color: $tertiary-admin-color;
+  }
+}
+
+.wrap .add-new-h2,
+.wrap .add-new-h2:active,
+.wrap .page-title-action,
+.wrap .page-title-action:active {
+  background: $primary-color;
+  color: $white;
+  border: 0;
+}
+
+.wrap .add-new-h2:hover,
+.wrap .page-title-action:hover {
+  background: $tertiary-admin-color;
+  color: $white;
+}
+
+#wp-admin-bar-top-secondary {
+  display: inline-block;
+
+  div {
+    display: inline-block;
+    padding-right: 10px;
+  }
+}
+
+#wpadminbar {
+  background: $admin-color;
+
+  .quicklinks {
+    a {
+      padding: 0;
+    }
+
+    .ab-empty-item {
+      display: none;
+    }
+  }
+}
+
+#collapse-button:focus,
+#collapse-button:hover {
+  color: $tertiary-admin-color;
+}
+
+#adminmenu,
+#adminmenu .wp-submenu,
+#adminmenuback,
+#adminmenuwrap {
+  background: $primary-color;
+}
+
+#adminmenu .wp-has-current-submenu .wp-submenu,
+#adminmenu .wp-has-current-submenu .wp-submenu.sub-open,
+#adminmenu .wp-has-current-submenu.opensub .wp-submenu,
+#adminmenu a.wp-has-current-submenu:focus + .wp-submenu,
+.no-js li.wp-has-current-submenu:hover .wp-submenu,
+#adminmenu .wp-submenu,
+.folded #adminmenu .wp-has-current-submenu .wp-submenu,
+.folded #adminmenu a.wp-has-current-submenu:focus + .wp-submenu,
+.theme-browser .theme.active .theme-name {
+  background: $primary-color;
+}
+
+.theme-browser .theme.active .theme-actions,
+.theme-browser .theme .more-details {
+  background: $primary-color;
+}
+
+#adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head,
+#adminmenu .wp-menu-arrow,
+#adminmenu .wp-menu-arrow div,
+#adminmenu li.current a.menu-top,
+#adminmenu li.wp-has-current-submenu a.wp-has-current-submenu,
+.folded #adminmenu li.current.menu-top,
+.folded #adminmenu li.wp-has-current-submenu {
+  background: $tertiary-admin-color;
+}
+
+#adminmenu {
+  margin: 0;
+}
+
+#adminmenu li.wp-has-submenu.wp-not-current-submenu.opensub:hover:after {
+  border-right-color: rgba($white, 0.7);
+}
+
+#adminmenu .wp-submenu a:focus,
+#adminmenu .wp-submenu a:hover,
+#adminmenu a:hover,
+#adminmenu li.menu-top > a:focus,
+#adminmenu li.menu-top:hover,
+#adminmenu li.opensub > a.menu-top,
+#adminmenu li > a.menu-top:focus {
+  background: $primary-color;
+  color: $tertiary-admin-color;
+}
+
+#adminmenu li a:focus div.wp-menu-image:before,
+#adminmenu li.opensub div.wp-menu-image:before,
+#adminmenu li:hover div.wp-menu-image:before {
+  color: $tertiary-admin-color;
+}
+
+#wpadminbar .quicklinks .ab-sub-wrapper .menupop.hover > a,
+#wpadminbar .quicklinks .menupop ul li a:focus,
+#wpadminbar .quicklinks .menupop ul li a:focus strong,
+#wpadminbar .quicklinks .menupop ul li a:hover,
+#wpadminbar .quicklinks .menupop ul li a:hover strong,
+#wpadminbar .quicklinks .menupop.hover ul li a:focus,
+#wpadminbar .quicklinks .menupop.hover ul li a:hover,
+#wpadminbar .quicklinks .menupop.hover ul li div[tabindex]:focus,
+#wpadminbar .quicklinks .menupop.hover ul li div[tabindex]:hover,
+#wpadminbar li #adminbarsearch.adminbar-focused:before,
+#wpadminbar li .ab-item:focus .ab-icon:before,
+#wpadminbar li .ab-item:focus:before,
+#wpadminbar li a:focus .ab-icon:before,
+#wpadminbar li.hover .ab-icon:before,
+#wpadminbar li.hover .ab-item:before,
+#wpadminbar li:hover #adminbarsearch:before,
+#wpadminbar li:hover .ab-icon:before,
+#wpadminbar li:hover .ab-item:before,
+#wpadminbar.nojs .quicklinks .menupop:hover ul li a:focus,
+#wpadminbar.nojs .quicklinks .menupop:hover ul li a:hover {
+  color: $tertiary-admin-color;
+}
+
+#wpadminbar .ab-top-menu > li.hover > .ab-item,
+#wpadminbar.nojq .quicklinks .ab-top-menu > li > .ab-item:focus,
+#wpadminbar:not(.mobile) .ab-top-menu > li:hover > .ab-item,
+#wpadminbar:not(.mobile) .ab-top-menu > li > .ab-item:focus {
+  background: $primary-color;
+  color: $tertiary-admin-color;
+}
+
+#wpadminbar .menupop .ab-sub-wrapper,
+#wpadminbar .shortlink-input {
+  background: $primary-color;
+}
+
+#wp-content {
+  background: #ccc;
+}
+
+#assistance_dashboard {
+  background: $primary-color;
+  color: $white;
+
+  .hndle {
+    text-align: center;
+    background: $primary-color;
+    color: $white;
+  }
+
+  .handlediv {
+    color: $white;
+
+    .toggle-indicator:before {
+      color: $white;
+    }
+  }
+
+  .inside {
+    text-align: center;
+    margin: 0;
+    padding: 40px 20px;
+  }
+
+  a {
+    text-decoration: none;
+    color: $tertiary-admin-color;
+    border-bottom: 1px $tertiary-admin-color dotted;
+
+    &:hover,
+    &:focus,
+    &:active {
+      outline: 0;
+      text-decoration: none;
+      border-bottom-style: solid;
+    }
+  }
+
+  .nbLogo {
+    display: inline-block;
+    border: 0;
+  }
+}
+
+.edit-post-visual-editor .block-editor-block-list__block {
+  max-width: 1200px;
+}
+
+/* NBTHEME Options - Customizer
+----------------------------------------------------------------------------- */
+.customize-control-media .remove-button,
+.customize-control-media .default-button,
+.customize-control-media .upload-button,
+.customize-control-upload .remove-button,
+.customize-control-upload .default-button,
+.customize-control-upload .upload-button,
+.customize-control-image .remove-button,
+.customize-control-image .default-button,
+.customize-control-image .upload-button,
+.customize-control-background .remove-button,
+.customize-control-background .default-button,
+.customize-control-background .upload-button,
+.customize-control-cropped_image .remove-button,
+.customize-control-cropped_image .default-button,
+.customize-control-cropped_image .upload-button,
+.customize-control-site_icon .remove-button,
+.customize-control-site_icon .default-button,
+.customize-control-site_icon .upload-button,
+.customize-control-header button.new,
+.customize-control-header button.remove {
+  width: auto !important;
+}
+
+/* Taille du "wide" blocks
+----------------------------------------------------------------------------- */
+.wp-block[data-align="wide"] {
+  max-width: 1100px;
+}
+
+/* Taille du "full-wide" blocks */
+.wp-block[data-align="full"] {
+  max-width: 1300px;
+  width: auto;
+  margin: auto !important;
+}

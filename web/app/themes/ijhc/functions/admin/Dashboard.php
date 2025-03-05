@@ -65,16 +65,16 @@ class Dashboard
     {
 //        $seize_logo = "/img/logo-seize.svg";
         ?>
-        <!--        <a href='https://ijhc.local' class="nbLogo" target='_blank'>-->
-        <!--            <img src="--><?php //= get_template_directory_uri() . $seize_logo
+			<!--        <a href='https://ijhc.local' class="nbLogo" target='_blank'>-->
+			<!--            <img src="--><?php //= get_template_directory_uri() . $seize_logo
         ?><!--" width="200" height="75" alt="Logo"/>-->
-        <!--        </a>-->
-        <br/>
-        Ce thème a été réalisé par <a href="https://ijhc.local" target="_blank">Baptiste Montécot</a>.
-        <br/>
-        Vous pouvez me contacter
-        <br/>par email, à l'adresse <a href="mailto:baptiste.montecot1@icloud.com">baptiste.montecot1@icloud.com</a>
-        <br/>ou par téléphone, au <a href="tel:+33611267870">06 11 26 78 70</a>
+			<!--        </a>-->
+			<br />
+			Ce thème a été réalisé par <a href="https://ijhc.local" target="_blank">Baptiste Montécot</a>.
+			<br />
+			Vous pouvez me contacter
+			<br />par email, à l'adresse <a href="mailto:baptiste.montecot1@icloud.com">baptiste.montecot1@icloud.com</a>
+			<br />ou par téléphone, au <a href="tel:+33611267870">06 11 26 78 70</a>
         <?php
     }
 
